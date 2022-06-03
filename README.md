@@ -99,6 +99,7 @@ The figure above shows that the values of MAE, MAPE, and RMSE, which tend to be 
 
 ### ARIMA Time Series (World Energy Consumption)
 Next, the ARIMA time series (Auto-Regressive Integrated Moving Average) is applied to the data. There are three variables in ARIMA, namely Auto-Regressive (p), Integrated (d), and Moving Average (q). The ARIMA variable value was calculated using the auto arima function. 
+
 ![image](https://user-images.githubusercontent.com/97785087/171769466-ec8145b8-cec3-4423-b297-68ccb7573536.png)
 
 ![image](https://user-images.githubusercontent.com/97785087/171769473-58069b0a-c9f9-4953-8489-303cddb5665a.png)
