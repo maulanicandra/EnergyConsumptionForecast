@@ -54,3 +54,117 @@ As for the energy consumption of each continent, the highest in the Asia Pacific
 ![image](https://user-images.githubusercontent.com/97785087/171768867-a9996eae-df75-4a2c-bbf8-e4313bbbfe7c.png)
 ![image](https://user-images.githubusercontent.com/97785087/171768878-b480e9b7-81cb-4ba8-884a-26b41062757e.png)
 
+China has the highest energy consumption, followed by the US. The US rate is fixed because industrialization is already saturated. When viewed from the rank of 20 countries, it can be seen that the 18 countries with the highest energy consumption are G20 countries, so energy consumption is influenced by GDP.
+
+![image](https://user-images.githubusercontent.com/97785087/171768974-e1048e68-0bb6-42fd-bf60-e52ec6b7973f.png)
+![image](https://user-images.githubusercontent.com/97785087/171768986-ed487f02-8006-4a6c-b3ae-86577c10e6a0.png)
+
+As for renewable energy, the highest is in China and followed by the United States. The amount of renewable energy is influenced by state policy and R&D, as well as global pressure.
+
+## Modeling
+### Simple Liniar Regression
+Simple linear regression modeling has been conducted to obtain the coefficient and intercept. Simple linear regression is used as the baseline for selecting the forecast model in this study. MAE, MAPE, and RMSE parameters are used to check the error of the predicted value against the actual value. The values of MAE and RMSE are similar, so there are no anomaly errors, and the model can represent the data.
+
+![image](https://user-images.githubusercontent.com/97785087/171769046-6daf8600-94ea-4942-a50b-7dd2076f2808.png)
+
+### Ridge and Lasso Regression
+Ridge and lasso regression was also performed on the data. Hyperparameter tuning is done to get the best alpha for ridge and lasso regression. The following are the results of the ridge and lasso regression and the values for MAE, MAPE, and RMSE.
+![image](https://user-images.githubusercontent.com/97785087/171769208-05a75364-26d5-48e1-82d3-fc8199c867fc.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769219-afe500ce-db84-450b-bc71-0411af422597.png)
+
+### Time Series Forecasting for World Energy Consumption
+Then, I conduct time series forecasting because the parameter that affects energy consumption is time. Time-series forecasting models can predict future values based on previous values. Time series can be divided into several parts, namely:
+- Trend: increase or decrease in the value of the data. 
+- Seasonality: repetitive pattern seen in the data series.
+- Residue is the residual value of the data after extracting trend and seasonality.
+
+![image](https://user-images.githubusercontent.com/97785087/171769280-8509a935-b1aa-45da-8fb0-2cd1c4cb2696.png)
+
+The figure above shows that data has a trend and no seasonality.
+Then a stationarity check is carried out to determine which time series analysis can be applied to our data. After the transformation using shift and log transformation, the transformed data is evaluated using Augmented Dickey-Fuller (ADF). The data is stationary. The augmented Dickey-Fuller Stationarity Test (ADF) is a test performed on time-series data to determine whether the time series data is stationary or not.
+
+Some time-series analyses require that the data be stationary before further analysis, such as data analysis using ARIMA. Therefore, a stationarity test needs to be carried out to fulfil these requirements.
+
+![image](https://user-images.githubusercontent.com/97785087/171769315-c914fd1b-57cd-4c17-8a70-d601b965db2a.png)
+
+The figure above shows that data is stationary.
+I tried to apply simple exponential smoothing, holt exponential smoothing, and ARIMA (Auto-Regressive Integrated Moving Average) in this study.
+
+### Simple Exponential Smoothing and Holt Exponential Smoothing (World Energy Consumption)
+
+![image](https://user-images.githubusercontent.com/97785087/171769367-247d32b1-3662-4380-a837-bb49deb33cbb.png)
+
+The figure above shows that the values of MAE, MAPE, and RMSE, which tend to be larger because of their simple exponential characteristics, are suitable for data that does not have a trend but has seasonality. Meanwhile, in Holt's Exponential Smoothing, it can be seen that MAE, MAPE, and RMSE tend to be small because the data has a trend and does not have seasonality.
+
+### ARIMA Time Series (World Energy Consumption)
+Next, the ARIMA time series (Auto-Regressive Integrated Moving Average) is applied to the data. There are three variables in ARIMA, namely Auto-Regressive (p), Integrated (d), and Moving Average (q). The ARIMA variable value was calculated using the auto arima function. 
+![image](https://user-images.githubusercontent.com/97785087/171769466-ec8145b8-cec3-4423-b297-68ccb7573536.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769473-58069b0a-c9f9-4953-8489-303cddb5665a.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769483-2730a7a8-5155-4be6-8f46-3ad2c7c109cc.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769495-7d3856a0-1f6f-4f74-b90d-313d33319cd3.png)
+
+The result is that the MAE, MAPE, and RMSE values remain relatively large because ARIMA is more suitable for data that has trend and seasonality.
+
+### Time Series Forecasting for Renewable Energy
+Stationary check has been done to renewable energy data.
+![image](https://user-images.githubusercontent.com/97785087/171769538-7360d3db-0511-44bc-a30d-3eae9565adc0.png)
+
+The figure above shows that data has a trend and no seasonality.
+
+![image](https://user-images.githubusercontent.com/97785087/171769558-a994522f-5456-4efd-8fd1-5e91e3226ba6.png)
+
+After the transformation using twice shift transformation, the transformed data is evaluated using Augmented Dickey-Fuller (ADF). The data is stationary.
+
+![image](https://user-images.githubusercontent.com/97785087/171769573-e3c74ed9-7b9c-46b2-beea-24919822e15a.png)
+
+The figure above shows that the values of MAE, MAPE, and RMSE, which tend to be larger because of their simple exponential characteristics, are suitable for data that does not have a trend but has seasonality. Meanwhile, in Holt's Exponential Smoothing, it can be seen that MAE, MAPE, and RMSE tend to be small because the data has a trend and does not have seasonality.
+
+### ARIMA Time Series (Renewable Energy Consumption)
+The ARIMA variable value was calculated using the auto arima function.
+![image](https://user-images.githubusercontent.com/97785087/171769611-9a742478-fdf3-4c11-9c9e-7913bb69595b.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769624-f07544a2-42cd-4c41-adab-9a55a85b11ad.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769632-c70dd389-b6fc-4677-a113-25166e10a9d5.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171769647-b87f4f9a-da39-4c04-a8a0-a96d5cdce20f.png)
+
+The result is that the MAE, MAPE, and RMSE values remain relatively large because ARIMA is more suitable for data that has trend and seasonality.
+
+## Model Evaluation
+### World Energy COnsumption
+![image](https://user-images.githubusercontent.com/97785087/171769706-0e74b95c-af04-4be3-a353-80bc053ec9f6.png)
+
+### Renewable Energy Consumption
+![image](https://user-images.githubusercontent.com/97785087/171769740-ea78199b-bfa6-448a-827d-860d9e60399a.png)
+
+Model evaluation was carried out using MAE mape and RMSE values. R square is not used for evaluation to avoid bias because r square is very suitable for linear regression.
+Holt exponential smoothing was chosen to forecast world energy consumption and renewable energy consumption because it has the smallest MAE, MAPE, and RMSE values.
+
+## Forecast
+![image](https://user-images.githubusercontent.com/97785087/171769773-8c8b526a-2aeb-45b7-92eb-8c0aa3653edf.png)
+![image](https://user-images.githubusercontent.com/97785087/171769839-2d782591-2ae5-47b7-87ed-e060a271fa71.png)
+
+Prediction results with current energy consumption, the projection of renewable energy on world energy consumption in 2035 is only 15.70% of the 35% target. Meanwhile, in 2050 it will only reach 17.14% of the target, which is 50%. So there needs to be a disruption in energy use in 2 ways, namely reducing consumption, namely by energy efficiency and adding a renewable energy mix.
+
+## Follow-up Action
+For the follow-up action, I added clustering so that the regional solutions and policies provided are in accordance with the nature of the consumption pattern of the renewable energy mix. So that the policy can provide a smooth transition and significant results. Here I use Kmeans without PCA because I want to see the overall pattern of energy use. Based on the elbow method, the cluster can be divided into 4 and 5 clusters.
+
+![image](https://user-images.githubusercontent.com/97785087/171769955-a86de86e-1fd6-4966-91be-a34012867d09.png)
+
+Based on my personal judgment, I chose to divide the cluster into 4 based on the country based on the characteristics of the countries in the cluster. The four clusters are Agricultural and Service Based Country, Fossil Fuel Producers, Emission Intensive Producer, and Emerging Energy Consumer Countries.
+From this division, the policy regarding renewable energy should be prioritized from emission-intensive producers, fossil fuel producers, emerging energy consumer countries, to agricultural and service based countries. The priority of renewable energy can also be adjusted by the majority of renewable energy in the country to accelerate the rate of increase in renewable energy.
+
+![image](https://user-images.githubusercontent.com/97785087/171769993-8d25a6ad-0af4-489a-8fb6-3abb617e09ab.png)
+
+## Conclusion
+The forecast results show that the Net Zero Energy Mix target failed to meet the target of only 15.70% from 35% in 2035 and only 17.14% of 50% in 2050 so efforts were needed to accelerate an increase in the increase in renewable energy.
+## Recommendation
+To accelerate the process of achieving the Net Zero Energy Mix target, a regional policy variation and effort is required according to the nature of the consumption of each country according to the results of the clustering.
+## Future Research and Improvement
+Forecasting needs to be done with more advanced methods such as fbprophet or LSTM to forecast Total Energy Consumption and Renewable Energy Consumption.
+
