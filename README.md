@@ -50,8 +50,7 @@ Meanwhile, the use of renewable energy is still being led by OECD countries beca
 
 As for the energy consumption of each continent, the highest in the Asia Pacific, this is due to the shifting of the manufacturing area to Asia. Meanwhile, renewable energy is also the most abundant in the Asia Pacific because there is significant growth in China and many other countries with ambitious projects and energy councils.
 
-### COuntry Total Energy Consumption
+### Country Total Energy Consumption
 ![image](https://user-images.githubusercontent.com/97785087/171768867-a9996eae-df75-4a2c-bbf8-e4313bbbfe7c.png)
-
 ![image](https://user-images.githubusercontent.com/97785087/171768878-b480e9b7-81cb-4ba8-884a-26b41062757e.png)
 
