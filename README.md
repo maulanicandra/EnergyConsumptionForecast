@@ -20,7 +20,9 @@ Dataset can be found at https://ourworldindata.org/grapher/primary-sub-energy-so
 ### Total Energy Consumption
 ![image](https://user-images.githubusercontent.com/97785087/171768566-915ad9bd-124d-4778-882a-ce4e815019b8.png)
 Most energy sources used are fossil energy, namely oil, coal, and gas. However, it can also be seen that renewable energy consumption is increasing every year. Meanwhile, from the correlation data, new renewable energy sources are correlated. In contrast, renewable energy sources developed longer, such as nuclear and hydro, are still correlated with non-renewable energy.
+
 ![image](https://user-images.githubusercontent.com/97785087/171768608-9017da2b-47d1-4913-8749-25dbbd5bc5e4.png)
+
 Observation:
 1.	 Wind energy is highly correlated with solar, biofuels, and biomass
 2.	 Hydro is highly correlated with gas, oil, coal, and nuclear.
@@ -31,3 +33,25 @@ Observation:
 7.	 Coal is highly correlated with gas, oil, and hydro.
 8.	 Oil is highly correlated with gas, coal, biomass, nuclear, and hydro.
 9.	 Gas is highly correlated with oil, coal, biomass, biofuels, nuclear, and hydro.
+
+### Organizational Energy Consumption
+![image](https://user-images.githubusercontent.com/97785087/171768730-72eb14a8-c203-4065-92c4-32381d939213.png)
+
+Initially, most energy uses was by OECD countries (countries in Europe and the US). Still, since 2008 the value has been followed by Non-OECD with the development of industry and shifting manufacturing in Non-OECD countries, especially the Asia Pacific.
+
+![image](https://user-images.githubusercontent.com/97785087/171768747-1d981cbd-fa12-452e-8884-11a5dadd75ce.png)
+
+Meanwhile, the use of renewable energy is still being led by OECD countries because a lot of research is being carried out in that country.
+
+### Continent Energy Consumption
+![image](https://user-images.githubusercontent.com/97785087/171768796-5bd44a53-a57f-4b01-9f6c-2c0acd872378.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171768807-769d0bf7-fc7b-49b1-9426-f48dfed241d4.png)
+
+As for the energy consumption of each continent, the highest in the Asia Pacific, this is due to the shifting of the manufacturing area to Asia. Meanwhile, renewable energy is also the most abundant in the Asia Pacific because there is significant growth in China and many other countries with ambitious projects and energy councils.
+
+### COuntry Total Energy Consumption
+![image](https://user-images.githubusercontent.com/97785087/171768867-a9996eae-df75-4a2c-bbf8-e4313bbbfe7c.png)
+
+![image](https://user-images.githubusercontent.com/97785087/171768878-b480e9b7-81cb-4ba8-884a-26b41062757e.png)
+
